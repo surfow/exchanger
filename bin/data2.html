@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exchanger</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="files/css.css" />
+    <script type="text/javascript" src="files/js.js" onload="window.$ = window.jQuery = module.exports;" ></script>
+    <script type="text/javascript" src="files/surfow.js" ></script>
+  </head>
+  <body class="maxwork">
+      <div style="-webkit-app-region:drag;" id="loading_area" class="loading_area" ><div class="loading_wrap" >
+          <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             width="30px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+            <rect x="0" y="0" width="4" height="10" fill="#ffffff">
+              <animateTransform attributeType="xml"
+                attributeName="transform" type="translate"
+                values="0 0; 0 20; 0 0"
+                begin="0" dur="0.6s" repeatCount="indefinite" />
+            </rect>
+            <rect x="10" y="0" width="4" height="10" fill="#ffffff">
+              <animateTransform attributeType="xml"
+                attributeName="transform" type="translate"
+                values="0 0; 0 20; 0 0"
+                begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+            </rect>
+            <rect x="20" y="0" width="4" height="10" fill="#ffffff">
+              <animateTransform attributeType="xml"
+                attributeName="transform" type="translate"
+                values="0 0; 0 20; 0 0"
+                begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+            </rect>
+        </svg> Loading...</div></div>
+      <div id="user-info" class="uk-flex-top" uk-modal>
+           <div class="uk-modal-dialog uk-card uk-card-default uk-margin-auto-vertical">
+               <button class="uk-modal-close-default" type="button" uk-close></button>
+
+               <div class="uk-width-1-1@m">
+                <div class="uk-card-header">
+                    <div class="uk-grid-small uk-flex-middle" uk-grid>
+                        <h3 class="uk-card-title"><b>@</b><b class="put_username"></b></h3>
+                    </div>
+                </div>
+                <div class="uk-card-body">
+                    <ul class="uk-list">
+                        <li><input type="checkbox" checked="" id="mute" /> Mute browser</li>
+                        <li>Internet : <b id="internet"></b></li>
+                        <li>Account status : <b id="account_status">ACTIVE</b></li>
+                        <li>visits during this session : <b class="put_session_points">CALCULATING...</b></li>
+                    </ul>
+                </div>
+                <div class="uk-card-footer">
+                    <a class="uk-button uk-button-text">you're <span style="color:green;" >connected</span> to <span class="put_domain">server</span></a>
+                </div>
+            </div>
+           </div>
+       </div>
+       <div id="points-info" class="uk-flex-top" uk-modal>
+           <div class="uk-modal-dialog uk-card uk-card-default uk-margin-auto-vertical">
+               <button class="uk-modal-close-default" type="button" uk-close></button>
+
+               <div class="uk-width-1-1@m">
+                <div class="uk-card-body">
+                    <div class="uk-flex uk-height-small uk-margin uk-text-center">
+                        <div class="uk-margin-auto uk-margin-auto-vertical">
+                            <h1 class="uk-heading-primary" ><b class="put_points" >wait...</b> <span uk-icon="icon: database; ratio: 2"></span></h1>
+                            <hr class="uk-divider-icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </div>
+        </div>
+      <div class="surfow-window uk-card uk-card-default uk-animation-slide-top-small" >
+          <div style="-webkit-app-region:drag;" class="surfow-header uk-inline uk-display-block uk-card-primary uk-card-header" >
+              <div class="on-left uk-inline" >
+                  <span uk-icon="icon: bolt"></span> Exchanger <span id="status" >...</span>
+              </div>
+              <div style="-webkit-app-region:no-drag;" class="on-right" >
+                  <a id="points" href="#points-info" uk-toggle title="Points" ><span class="earning" ></span> <span uk-icon="icon: database"></span></a>
+                  <a id="user" href="#user-info" uk-toggle title="User" ><span uk-icon="icon: user"></span></a>
+                  <a style="-webkit-app-region:drag;padding:0 12px;text-decoration:none;cursor:default;color:rgba(255,255,255,0.3);" ><span uk-icon="icon:  more-vertical"></span></a>
+                  <a id="minimize" title="Minimize" ><span uk-icon="icon: minus"></span></a>
+                  <a id="maximize" title="Maximize" ><span uk-icon="icon: expand"></span></a>
+                  <a id="restore" style="display:none;" title="Restore Down" ><span uk-icon="icon: shrink"></span></a>
+                  <a id="close" title="Close" ><span uk-icon="icon: close"></span></a>
+              </div>
+          </div>
+          <div class="uk-card-body uk-display-block surfow-body" >
+              <div class="surfow-top" >
+                  <div class="surfow-secure" >
+                      <span class="unlock" uk-icon="icon: unlock; ratio: 0.8"></span>
+                  </div>
+                  <div class="surfow-address" >
+                      <div id=progress></div>
+                      <span>Home</span>
+                  </div>
+                  <div class="surfow-progress" >
+                     <center> <p id="percenprogress" >0s</p></center>
+                  </div>
+                  <div class="surfow-loading" >
+                      <a><div class="loader loader--style5" title="Exchange status">
+                      <center><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="24px" height="24px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                        <rect x="0" y="0" width="4" height="10" fill="#6574cd">
+                          <animateTransform class="load_speed" attributeType="xml"
+                            attributeName="transform" type="translate"
+                            values="0 0; 0 20; 0 0"
+                            begin="0" dur="2s" repeatCount="indefinite" />
+                        </rect>
+                        <rect x="10" y="0" width="4" height="10" fill="#6574cd">
+                          <animateTransform class="load_speed" attributeType="xml"
+                            attributeName="transform" type="translate"
+                            values="0 0; 0 20; 0 0"
+                            begin="0.2s" dur="2s" repeatCount="indefinite" />
+                        </rect>
+                        <rect x="20" y="0" width="4" height="10" fill="#6574cd">
+                          <animateTransform class="load_speed" attributeType="xml"
+                            attributeName="transform" type="translate"
+                            values="0 0; 0 20; 0 0"
+                            begin="0.4s" dur="2s" repeatCount="indefinite" />
+                        </rect>
+                    </svg></center>
+                    </div></a>
+                  </div>
+                  <div class="surfow-btn" >
+                      <a style="display:none;" title="Please wait..." id="wait" class="disable_area uk-button uk-inline uk-button-primary uk-button-small" >
+                            <span uk-icon="icon: bolt; ratio: 0.9"></span>
+                            <span>Wait..</span>
+                      </a>
+                      <a style="display:none;" title="Pause browsing"  id="pause" class="uk-button uk-inline uk-button-primary uk-button-small" >
+                            <span uk-icon="icon: close; ratio: 0.9"></span>
+                            <span>Stop</span>
+                      </a>
+                      <a id="play" title="Start browsing" class="uk-button uk-inline uk-button-primary uk-button-small" >
+                            <span uk-icon="icon: bolt; ratio: 0.9"></span>
+                            <span>Start</span>
+                      </a>
+                  </div>
+                  <div class="surfow-report" >
+                      <a  id="report" title="Report" class="disable_area uk-button uk-inline uk-button-primary uk-button-small" >
+                            <span uk-icon="icon: git-branch; ratio: 0.9"></span>
+                            <span>Report</span>
+                      </a>
+                  </div>
+              </div>
+
+              <div class="surfow-webview" >
+                  <webview
+				  partition="persist:exchange"
+                  id="browsing-view"
+                  autosize
+                  src="data3.html"
+                  httpreferrer=""
+                  webpreferences="allowRunningInsecureContent"
+                  useragent=""
+                  disablewebsecurity="on"
+                  ></webview>
+              </div>
+          </div>
+
+          <div style="-webkit-app-region:drag;" class="uk-card-footer uk-card-primary uk-inline uk-display-block surfow-footer" >
+              <p>&copy; <script type="text/javascript">document.write(new Date().getFullYear());</script>, all rights reserved</p>
+              <p class="put_domain" ></p>
+          </div>
+        <script type="text/javascript" src="system/system2.js" ></script>
+      </div>
+  </body>
+</html>
