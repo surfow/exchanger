@@ -1,5 +1,5 @@
 <h1><a id="Surfow_exchanger_0"></a>Surfow exchanger</h1>
-<p><a href="intro"><img src="https://doc-0o-ak-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/ebusqvkv3kd3b8lf342mp8tmgg6bqvl0/1544450400000/08172441864954648196/*/1s0Fu8PnDB6bX1ADADkHQQ1CXJDXdvlA3" alt="N|Solid"></a><br>
+<p><a href="intro"><img src="https://gdurl.com/l6fF" alt="N|Solid"></a><br>
 Surfow exchanger is a traffic exchange software that works with surfow script</p>
 <h3><a id="Tech_5"></a>Tech</h3>
 <p>Surfow exchanger uses a number of open source projects to work properly:</p>
