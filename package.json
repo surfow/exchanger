@@ -7,8 +7,9 @@
         "start": "electron .",
         "pack:osx": "electron-packager . Exchanger --out=../dist/osx --asar=true --platform=darwin --arch=x64 --icon=build/icon.icns --prune=true",
         "pack:linux": "electron-packager . Exchanger --out=../dist/linux --asar=true --platform=linux --arch=x64 --icon=build/png/512x512.png --prune=true",
+        "pack:linux_arm64": "electron-packager . Exchanger --out=../dist/linux_arm64 --asar=true --platform=linux --arch=arm64 --icon=build/png/512x512.png --prune=true",
         "pack:win32": "electron-packager . Exchanger --out=../dist/win --asar=true --platform=win32 --arch=ia32 --icon=build/icon.ico --prune=true",
-        "build": "npm run pack:osx && npm run pack:linux && npm run pack:win32"
+        "build": "npm run pack:osx && npm run pack:linux && npm run pack:linux_arm64 && npm run pack:win32"
     },
     "keywords": [
         "Traffic",
